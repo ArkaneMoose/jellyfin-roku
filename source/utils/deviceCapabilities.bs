@@ -61,6 +61,7 @@ function GetDirectPlayProfiles() as object
 
     di = CreateObject("roDeviceInfo")
     ' all possible containers
+    ' (except ts, which has known issues on Roku: https://github.com/jellyfin-archive/jellyfin-roku-legacy/issues/1850)
     supportedCodecs = {
         mp4: {
             audio: [],
@@ -79,10 +80,6 @@ function GetDirectPlayProfiles() as object
             video: []
         },
         dash: {
-            audio: [],
-            video: []
-        },
-        ts: {
             audio: [],
             video: []
         }
